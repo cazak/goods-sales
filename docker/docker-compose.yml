@@ -1,0 +1,42 @@
+services:
+  php-fpm:
+    container_name: php-fpm
+    build:
+      context: ./../
+      dockerfile: ./docker/php-fpm/Dockerfile
+      args:
+        - PUID=${PUID}
+        - PGID=${PGID}
+    environment:
+      PHP_IDE_CONFIG: "serverName=Docker"
+    volumes:
+      - /var/www/vendor/
+      - ./../:/var/www/
+
+  nginx:
+    container_name: nginx
+    build:
+      context: ./nginx
+    ports:
+      - ${NGINX_HOST_HTTP_PORT}:80
+    volumes:
+      - ..:/var/www:rw
+    depends_on:
+      - php-fpm
+
+  mysql:
+    build:
+      context: ./mysql/
+    volumes:
+      - mysql:/var/lib/mysql/
+    ports:
+      - ${MYSQL_PORT}:3306
+    env_file: ./mysql/.env
+    healthcheck:
+      test: "mysql --user=$$MYSQL_USER --password=$$MYSQL_PASSWORD --execute='select 1;'"
+      interval: 1s
+      timeout: 100s
+      retries: 50
+
+volumes:
+  mysql:
