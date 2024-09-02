@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Api;
 
-use App\Buyer\Entity\Buyer;
+use App\Model\Buyer\Entity\Buyer;
 use App\Security\SecurityUser;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
