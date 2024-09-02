@@ -19,15 +19,39 @@ doctrine:
             User:
                 type: attribute
                 is_bundle: false
-                dir: '%kernel.project_dir%/src/User/Entity'
-                prefix: 'App\User\Entity'
+                dir: '%kernel.project_dir%/src/Model/User/Entity'
+                prefix: 'App\Model\User\Entity'
                 alias: User
             Buyer:
                 type: attribute
                 is_bundle: false
-                dir: '%kernel.project_dir%/src/Buyer/Entity'
-                prefix: 'App\Buyer\Entity'
+                dir: '%kernel.project_dir%/src/Model/Buyer/Entity'
+                prefix: 'App\Model\Buyer\Entity'
                 alias: Buyer
+            Goods:
+                type: attribute
+                is_bundle: false
+                dir: '%kernel.project_dir%/src/Model/Goods/Entity'
+                prefix: 'App\Model\Goods\Entity'
+                alias: Goods
+            Rental:
+                type: attribute
+                is_bundle: false
+                dir: '%kernel.project_dir%/src/Model/Deal/Rental/Entity'
+                prefix: 'App\Model\Deal\Rental\Entity'
+                alias: Rental
+            Purchase:
+                type: attribute
+                is_bundle: false
+                dir: '%kernel.project_dir%/src/Model/Deal/Purchase/Entity'
+                prefix: 'App\Model\Deal\Purchase\Entity'
+                alias: Purchase
+            GoodsCode:
+                type: attribute
+                is_bundle: false
+                dir: '%kernel.project_dir%/src/Model/Deal/GoodsCode/Entity'
+                prefix: 'App\Model\Deal\GoodsCode\Entity'
+                alias: GoodsCode
         controller_resolver:
             auto_mapping: false
 

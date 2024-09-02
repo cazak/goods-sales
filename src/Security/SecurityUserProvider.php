@@ -4,11 +4,14 @@ declare(strict_types=1);
 
 namespace App\Security;
 
-use App\User\Entity\UserRepository;
+use App\Model\User\Entity\UserRepository;
 use Symfony\Component\Security\Core\Exception\UserNotFoundException;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 
+/**
+ * @implements UserProviderInterface<SecurityUser>
+ */
 final readonly class SecurityUserProvider implements UserProviderInterface
 {
     public function __construct(

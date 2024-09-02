@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Security;
 
-use App\User\Entity\User;
-use App\User\Entity\ValueObject\Role;
+use App\Model\User\Entity\User;
+use App\Model\User\Entity\ValueObject\Role;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
