@@ -1,7 +1,7 @@
 ## Запуск
 
 ```shell
-git clone git@github.com:cazak/projects.git your-folder-name
+git clone git@github.com:cazak/goods-sales.git your-folder-name
 
 cd ./your-folder-name/
 
